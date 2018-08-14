@@ -47,7 +47,7 @@ def create_level(file_path, level_index, num):
 	base_dir = "../" + level_names[level_index]
 	if not os.path.exists(base_dir):
 		os.mkdir(base_dir)
-	for x in xrange(1, num):
+	for x in range(1, num):
 		file_path = create_file(file_path, level_index, level_funcs[level_index])
 	return create_file(file_path, level_index+1, level_funcs[level_index])
 
