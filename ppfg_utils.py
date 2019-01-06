@@ -13,8 +13,8 @@ def new_rand(file_dir):
 # create file with name(file_path) and return new file (to be created in base_dir next)
 def create_file(file_path, level_index, description, puzzle_function, hint):
 	base_dir = "level" + str(level_index)
-	new_title = new_rand(base_dir) + ".html"
-	new_path = base_dir + "/" + new_title
+	new_title = new_rand(base_dir)
+	new_path = base_dir + "/" + new_title + ".html"
 	file = open("../" + file_path, 'w')
 	content = "".join([
 		"<html><head></head><body>",
