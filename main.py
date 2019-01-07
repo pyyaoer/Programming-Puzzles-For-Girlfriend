@@ -1,11 +1,11 @@
 import os
 from ppfg_levels import *
 
-level_num = 2
-nums = [1, 1]
+level_num = 3
+nums = [1, 1, 1]
 
 if __name__ == '__main__':
-	clear_levels(2)
+	clear_levels(level_num)
 	start_file = "index.html"
 	for x in range(0, level_num):
 		start_file = create_level(start_file, x, nums[x])

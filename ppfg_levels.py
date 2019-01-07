@@ -4,8 +4,9 @@ from ppfg_utils import create_welcome, create_body, create_goodbye
 
 from hyperlink import hyperlink_function
 from naiveaddr import naiveaddr_function
+from picaddr import picaddr_function
 
-level_funcs = [hyperlink_function, naiveaddr_function]
+level_funcs = [hyperlink_function, naiveaddr_function, picaddr_function]
 
 # create level in base_dir
 def create_level(file_path, level_index, num):
@@ -15,7 +16,7 @@ def create_level(file_path, level_index, num):
 	file_path = create_welcome(file_path, level_index, level_funcs[level_index])
 	for x in range(1, num):
 		file_path = create_body(file_path, level_index, level_funcs[level_index])
-	return create_goodbye(file_path, level_index+1, level_funcs[level_index])
+	return create_goodbye(file_path, level_index, level_funcs[level_index])
 
 def clear_levels(level_num):
 	try:

@@ -19,7 +19,7 @@ def create_file(file_path, level_index, description, puzzle_function, hint):
 	content = "".join([
 		"<html><head></head><body>",
 		"<div>", description, "</div>",
-		"<div>", puzzle_function(level_index, new_title), "</div>",
+		"<div>", puzzle_function(level_index, new_title, file_path), "</div>",
 		"<div>", hint, "</div>",
 		"</body></html>"])
 	file.write(content)
@@ -39,4 +39,4 @@ def create_body(file_path, level_index, puzzle_function):
 def create_goodbye(file_path, level_index, puzzle_function):
 	description = "You've passed Level " + str(level_index) + "! Next level:"
 	hint = ""
-	return create_file(file_path, level_index, description, puzzle_function, hint)
+	return create_file(file_path, level_index+1, description, puzzle_function, hint)
