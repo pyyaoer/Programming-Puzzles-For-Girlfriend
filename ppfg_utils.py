@@ -17,7 +17,17 @@ def create_file(file_path, level_index, description, puzzle_function, hint):
 	new_path = base_dir + "/" + new_title + ".html"
 	file = open("../" + file_path, 'w')
 	content = "".join([
-		"<html><head></head><body>",
+		"""<html>
+		<head><style>
+			@font-face {
+				font-family: "consola";
+				src:url("resource/consola.ttf");
+			}
+			consola {
+				font-family:"consola";
+			}
+		</style></head>
+		<body>""",
 		"<div>", description, "</div>",
 		"<div>", puzzle_function(level_index, new_title, file_path), "</div>",
 		"<div>", hint, "</div>",

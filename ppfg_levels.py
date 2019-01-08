@@ -5,8 +5,9 @@ from ppfg_utils import create_welcome, create_body, create_goodbye
 from hyperlink import hyperlink_function
 from naiveaddr import naiveaddr_function
 from picaddr import picaddr_function
+from asciiart import asciiart_function
 
-level_funcs = [hyperlink_function, naiveaddr_function, picaddr_function]
+level_funcs = [hyperlink_function, asciiart_function, naiveaddr_function, picaddr_function]
 
 # create level in base_dir
 def create_level(file_path, level_index, num):
