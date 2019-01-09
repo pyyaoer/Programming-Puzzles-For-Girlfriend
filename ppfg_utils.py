@@ -5,7 +5,7 @@ import os
 # new legal file in file_dir
 def new_rand(file_dir):
 	while True:
-		ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 10))
+		ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 9))
 		if os.path.exists(file_dir + "/" + ran_str+".html"):
 			continue
 		return ran_str

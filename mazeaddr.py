@@ -4,17 +4,16 @@
 from random import shuffle, sample, randint
 from string import ascii_letters, digits
 
-start = []
-end = []
 
 def make_maze(w = 16, h = 8, msg = "!@#$%^&*()"):
 	vis = [[0] * w + [1] for _ in range(h)] + [[1] * (w + 1)]
 	ver = [["|   "] * w + ['|'] for _ in range(h)] + [[]]
 	hor = [["+---"] * w + ['+'] for _ in range(h + 1)]
-
+	start = []
+	end = []
 
 	def walk(x, y):
-		global start, end
+		nonlocal start, end
 		vis[y][x] = 1
 
 		d = [(x - 1, y), (x, y + 1), (x + 1, y), (x, y - 1)]
@@ -47,7 +46,7 @@ def make_maze(w = 16, h = 8, msg = "!@#$%^&*()"):
 	end.reverse()
 	ls = len(start)
 	le = len(end)
-	charpos = sample(range(0, ls + le), 10)
+	charpos = sample(range(0, ls + le), 9)
 	lmsg = list(msg)
 	j = 0
 	for (i, (a, b)) in zip(range(0, ls + le), start + end):
@@ -60,7 +59,7 @@ def make_maze(w = 16, h = 8, msg = "!@#$%^&*()"):
 
 	# fill in characters randomly
 	succ = 0
-	while succ < w*h * 10 / (ls + le):
+	while succ < w*h * 9 / (ls + le):
 		rx = randint(0, w-1)
 		ry = randint(0, h-1)
 		if (rx, ry) in start+end:
@@ -83,3 +82,6 @@ def make_maze(w = 16, h = 8, msg = "!@#$%^&*()"):
 def mazeaddr_function(level_index, next_title, my_path):
 	content = "\n" + make_maze(msg=next_title)
 	return "<pre>" + content + "</pre>"
+
+if __name__ == '__main__':
+	print(make_maze())
