@@ -2,16 +2,17 @@ import os
 import shutil
 from ppfg_utils import create_welcome, create_body, create_goodbye
 
-from hyperlink import hyperlink_function
-from naiveaddr import naiveaddr_function
-from picaddr import picaddr_function
-from asciiart import asciiart_function
-from qrcodeaddr import qrcodeaddr_function
-from mazeaddr import mazeaddr_function
-from sudoku import sudoku_function
-from hiddenelements import hiddenelements_function
+from levels.hyperlink import *
+from levels.naiveaddr import *
+from levels.picaddr import *
+from levels.asciiart import *
+from levels.qrcodeaddr import *
+from levels.mazeaddr import *
+from levels.sudoku import *
+from levels.hiddenelements import *
 
-level_funcs = [hyperlink_function, hiddenelements_function, sudoku_function, mazeaddr_function, qrcodeaddr_function, asciiart_function, naiveaddr_function, picaddr_function]
+level_funcs = [hyperlink_function, naiveaddr_function, qrcodeaddr_function, hiddenelements_function, asciiart_function, sudoku_function, mazeaddr_function, picaddr_function]
+hint_funcs = []
 
 # create level in base_dir
 def create_level(file_path, level_index, num):
