@@ -11,8 +11,14 @@ from levels.mazeaddr import *
 from levels.sudoku import *
 from levels.hiddenelements import *
 
-level_funcs = [hyperlink_function, naiveaddr_function, qrcodeaddr_function, hiddenelements_function, asciiart_function, sudoku_function, mazeaddr_function, picaddr_function]
-hint_funcs = []
+level_funcs = [(hyperlink_function, hyperlink_hint),\
+		(naiveaddr_function, naiveaddr_hint),\
+		(qrcodeaddr_function, qrcodeaddr_hint),\
+		(hiddenelements_function, hiddenelements_hint),\
+		(asciiart_function, asciiart_hint),\
+		(sudoku_function, sudoku_hint),\
+		(mazeaddr_function, mazeaddr_hint),\
+		(picaddr_function, picaddr_hint)]
 
 # create level in base_dir
 def create_level(file_path, level_index, num):

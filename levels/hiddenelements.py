@@ -25,3 +25,6 @@ def hiddenelements_function(level_index, next_title, my_path):
 
 	l = [str(x) for x in list(next_title)]
 	return random_merge(l)
+
+def hiddenelements_hint():
+	return ""

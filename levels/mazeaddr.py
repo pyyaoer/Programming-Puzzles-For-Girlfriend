@@ -83,5 +83,8 @@ def mazeaddr_function(level_index, next_title, my_path):
 	content = "\n" + make_maze(msg=next_title)
 	return "<pre>" + content + "</pre>"
 
+def mazeaddr_hint():
+	return ""
+
 if __name__ == '__main__':
 	print(make_maze())

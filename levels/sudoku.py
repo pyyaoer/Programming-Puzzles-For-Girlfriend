@@ -108,6 +108,9 @@ def sudoku_function(level_index, next_title, my_path):
 	s += mat
 	return "<pre>" + s + "</pre>"
 
+def sudoku_hint():
+	return ""
+
 if __name__ == '__main__':
 	#mat, fst = make_sudoku(K=50)
 	#print(mat)

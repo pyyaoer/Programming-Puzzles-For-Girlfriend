@@ -3,3 +3,6 @@
 def hyperlink_function(level_index, next_title, my_path):
 	file_path = "/level" + str(level_index) + "/" + next_title + ".html"
 	return "".join(["<a href=", file_path, ">", next_title, "</a>"])
+
+def hyperlink_hint():
+	return ""

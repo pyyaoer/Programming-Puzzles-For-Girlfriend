@@ -10,3 +10,6 @@ def picaddr_function(level_index, next_title, my_path):
 	img.save(".." + file_path)
 
 	return "<img src=\"" + file_path + "\" />"
+
+def picaddr_hint():
+	return ""

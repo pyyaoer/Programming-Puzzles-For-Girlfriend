@@ -11,7 +11,7 @@ def new_rand(file_dir):
 		return ran_str
 
 # create file with name(file_path) and return new file (to be created in base_dir next)
-def create_file(file_path, level_index, description, puzzle_function, hint):
+def create_file(file_path, level_index, description, puzzle_function):
 	base_dir = "level" + str(level_index)
 	new_title = new_rand(base_dir)
 	new_path = base_dir + "/" + new_title + ".html"
@@ -19,8 +19,8 @@ def create_file(file_path, level_index, description, puzzle_function, hint):
 	content = "".join([
 		"<html><head></head><body>",
 		"<div>", description, "</div>",
-		"<div>", puzzle_function(level_index, new_title, file_path), "</div>",
-		"<div>", hint, "</div>",
+		"<div>", puzzle_function[0](level_index, new_title, file_path), "</div>",
+		"<div>", puzzle_function[1](), "</div>",
 		"</body></html>"])
 	file.write(content)
 	file.close()
@@ -28,15 +28,12 @@ def create_file(file_path, level_index, description, puzzle_function, hint):
 
 def create_welcome(file_path, level_index, puzzle_function):
 	description = "Welcome to Level " + str(level_index) + "!"
-	hint = ""
-	return create_file(file_path, level_index, description, puzzle_function, hint)
+	return create_file(file_path, level_index, description, puzzle_function)
 
 def create_body(file_path, level_index, puzzle_function):
 	description = ""
-	hint = ""
-	return create_file(file_path, level_index, description, puzzle_function, hint)
+	return create_file(file_path, level_index, description, puzzle_function)
 
 def create_goodbye(file_path, level_index, puzzle_function):
 	description = "You've passed Level " + str(level_index) + "! Next level:"
-	hint = ""
-	return create_file(file_path, level_index+1, description, puzzle_function, hint)
+	return create_file(file_path, level_index+1, description, puzzle_function)
